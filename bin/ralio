@@ -36,6 +36,12 @@ program
   .action(function (item, field, opts) { new CLI(opts.parent.host).edit(item, field) });
 
 program
+  .command('transition <item> <state>')
+  .option('-r, --resolution [resolution]', 'Set defect\'s resolution.')
+  .description('Transition an issue to a different state.')
+  .action(function (item, state, opts) { new CLI(opts.parent.host).transition(item, state) });
+
+program
   .command('open <item>')
   .description('Open a story, defect or task in a web browser')
   .action(function (item, opts) { new CLI(opts.parent.host).open(item) });
