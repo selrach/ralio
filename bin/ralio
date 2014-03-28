@@ -39,7 +39,7 @@ program
   .command('transition <item> <state>')
   .option('-r, --resolution [resolution]', 'Set defect\'s resolution.')
   .description('Transition an issue to a different state.')
-  .action(function (item, state, opts) { new CLI(opts.parent.host).transition(item, state) });
+  .action(function (item, state, opts) { new CLI(opts.parent.host).transition(item, state, opts) });
 
 program
   .command('open <item>')
